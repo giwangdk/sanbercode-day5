@@ -1,4 +1,4 @@
-
+//deklarasi array
 var items = [
     ['001', 'Keyboard Logitek', 60000, 'Keyboard yang mantap untuk kantoran', 'logitek.jpg'], 
     ['002', 'Keyboard MSI', 300000, 'Keyboard gaming MSI mekanik', 'msi.jpg'],
@@ -6,9 +6,11 @@ var items = [
     ['004', 'Mouse Jerry', 30000, 'Mouse yang disukai kucing', 'jerry.jpg']
 ]
 
+//select id 
 listBarang = document.getElementById("listBarang")
 var item = ""
 
+//function show card item 
 function showItems(arr) {
     var item = ""
     for (var i = 0; i < arr.length; i++){
@@ -32,6 +34,7 @@ function showItems(arr) {
 
 showItems(items)
 
+//function filter search
 function filter(kata) {
     var filteredItems = []
     for (var i = 0; i < items.length; i++){
@@ -45,6 +48,7 @@ function filter(kata) {
     return filteredItems
 }
 
+//add event listener to input serach
 var formSearch = document.getElementById("formItem")
 formSearch.addEventListener("submit", (e) => {
     e.preventDefault()
@@ -53,10 +57,10 @@ formSearch.addEventListener("submit", (e) => {
     showItems(terfilter)
 })
 
-
+//deklarasi inisiasi awal nomor cart 
 cart = document.getElementById('cart')
 i=0
-
+//function add cart
 function tambahCart(id) {
     i ++
     cart.innerHTML = `<i class="fas fa-shopping-cart"></i>${i}`
